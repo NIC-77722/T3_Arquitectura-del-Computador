@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conexión y Publicación MQTT</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="publish-container">
+        <h2>Publicaciones</h2>
+        <div class="form-group">
+            <label for="topicInput">Topico</label>
+            <input type="text" id="topicInput" placeholder="Ingresar Topico" />
+        </div>
+
+        <div class="form-group">
+            <label for="messageInput">Mensaje</label>
+            <textarea id="messageInput" rows="4" placeholder="Ingresar Mensaje"></textarea>
+        </div>
+        <div class="button-group">
+            <button id="connectButton" class="connect-button">Conectado</button>
+            <button id="publishButton" class="publish-button" disabled>Publicar</button>
+        </div>
+        <p id="connectionStatus" class="status-text" style="display: block;">Estado: Desconectado</p>
+    </div>
+
+    <div class="messages-container">
+        <h2>Mensajes</h2>
+        <div id="messageList" class="message-container">
+            <ul></ul>
+        </div>
+        <button id="clearMessagesButton" class="clear-button">Limpiar Mensajes</button>
+    </div>
+
+    <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
